@@ -1,0 +1,276 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li, ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  font-family: roboto;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(35, 37, 36);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.to-do-list {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  padding: 25px;
+  background-color: rgba(23, 22, 22, 0.908);
+  border-radius: 8px;
+  transition: box-shadow 0.5s;
+  box-shadow: 10px 10px 0px 0px rgba(47, 46, 46, 0.768627451);
+}
+@media (any-hover: hover) {
+  .to-do-list:hover {
+    box-shadow: 3px 3px 0px 0px rgba(100, 96, 96, 0.5725490196);
+  }
+}
+@media (max-width: 500px) {
+  .to-do-list {
+    grid-template-columns: auto;
+    padding: 25px 10px;
+  }
+}
+.to-do-list__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+@media (max-width: 500px) {
+  .to-do-list__form {
+    flex-wrap: wrap;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  position: relative;
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+  background-image: linear-gradient(90deg, rgb(240, 245, 241) 10%, rgb(147, 228, 103) 50%, rgb(87, 90, 91) 67%);
+}
+.title:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.input {
+  flex: 0 1 300px;
+  border-bottom: 2px solid grey;
+  height: 100%;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 15px;
+  color: rgb(225, 225, 231);
+}
+.input:not(:last-child) {
+  margin-right: 10px;
+}
+.input:not(:last-child) {
+  margin-bottom: 10px;
+}
+.input::-moz-placeholder {
+  font-size: 14px;
+  color: gray;
+  padding: 5px;
+}
+.input::placeholder {
+  font-size: 14px;
+  color: gray;
+  padding: 5px;
+}
+@media (max-width: 500px) {
+  .input {
+    flex: 0 1 100px;
+  }
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+input[type=checkbox], input[type=checkbox] label {
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+input[type=checkbox] + label::before {
+  content: "";
+  background-color: greenyellow;
+  border-radius: 8px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 4px;
+  margin-right: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+input[type=checkbox]:checked + label::before {
+  content: "";
+  display: inline-block;
+  background: transparent;
+  width: 2px;
+  height: 7px;
+  border: solid green;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  border-radius: 0;
+  margin: 0 15px 5px 5px;
+  cursor: pointer;
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 0 20px;
+  height: 100%;
+  border-radius: 8px;
+  color: rgb(38, 41, 39);
+  line-height: 1.2;
+  letter-spacing: 0.02rem;
+  background-color: transparent;
+  transition: all 0.5s;
+  text-shadow: 0 0 1px #fff, 0 0 2px rgb(218, 227, 202), 0 0 4px rgb(194, 239, 16), 0 0 8px rgb(104, 238, 8), 0 0 10px rgb(144, 201, 151), 0 0 15px rgb(196, 241, 206), 0 0 18px rgb(36, 194, 52), 0 0 25px rgb(2, 245, 2);
+}
+.btn:hover {
+  background-color: rgb(33, 42, 46);
+  color: white;
+}
+@media (max-width: 480px) {
+  .btn {
+    padding: 10px;
+  }
+}
+
+.inner {
+  padding: 0 30px;
+  margin-top: 60px;
+}
+
+.to-do {
+  max-width: 470px;
+  margin: 0 auto;
+}
+.to-do li {
+  font-size: 20px;
+  color: rgb(181, 180, 180);
+  text-shadow: 2px 2px 2px #111211;
+  position: relative;
+  letter-spacing: 0.1em;
+  padding: 10px 0;
+}
+.to-do li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.out {
+  background-color: transparent;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 5%;
+  top: center;
+  color: rgb(181, 180, 180);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.active {
+  color: rgb(221, 221, 228);
+  font-style: italic;
+  position: relative;
+  text-shadow: 2px 2px 3px #358131;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}/*# sourceMappingURL=style.css.map */
